@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Menu principal - Meu ERP{% endblock %}
+
+{% block content %}
+<!-- Conteúdo específico da página inicial -->
+<main class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1">Menu principal</h1>
+            <p class="text-muted mb-0">
+                Acesse os principais recursos do sistema.
+            </p>
+        </div>
+
+        <!-- Este botão ainda precisa receber uma ação, como abrir um formulário -->
+        <button class="btn btn-primary" id="botaoBoasVindas">
+            <i class="bi bi-plus-lg"></i>
+            Novo registro
+        </button>
+    </div>
+
+    <!-- Cartões de acesso às áreas do sistema -->
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="#" class="menu-card">
+                <div class="menu-icon bg-primary-subtle text-primary">
+                    <i class="bi bi-speedometer2"></i>
+                </div>
+                <h2>Dashboard</h2>
+                <p>Veja um resumo das informações do sistema.</p>
+            </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="{% url 'clientes'%}" 
+		 class="menu-card">
+                <div class="menu-icon bg-success-subtle text-success">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h2>Clientes</h2>
+                <p>Cadastre e consulte seus clientes.</p>
+            </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="#" class="menu-card">
+                <div class="menu-icon bg-warning-subtle text-warning">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <h2>Produtos</h2>
+                <p>Gerencie produtos e controle o estoque.</p>
+            </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="#" class="menu-card">
+                <div class="menu-icon bg-info-subtle text-info">
+                    <i class="bi bi-cart3"></i>
+                </div>
+                <h2>Vendas</h2>
+                <p>Consulte pedidos e registre novas vendas.</p>
+            </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="#" class="menu-card">
+                <div class="menu-icon bg-danger-subtle text-danger">
+                    <i class="bi bi-cash-coin"></i>
+                </div>
+                <h2>Financeiro</h2>
+                <p>Acompanhe receitas, despesas e pagamentos.</p>
+            </a>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <a href="#" class="menu-card">
+                <div class="menu-icon bg-secondary-subtle text-secondary">
+                    <i class="bi bi-gear"></i>
+                </div>
+                <h2>Configurações</h2>
+                <p>Personalize as opções do sistema.</p>
+            </a>
+        </div>
+    </div>
+</main>
+{% endblock %}
+

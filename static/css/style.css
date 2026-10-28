@@ -1,0 +1,283 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS DA PÁGINA
+   ===================================================== */
+
+body {
+    /* Remove a margem padrão do navegador */
+    margin: 0;
+
+    /* Define a cor de fundo geral da página */
+    background-color: #f4f6f9;
+
+    /* Define a fonte principal do sistema */
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   PÁGINA DE LOGIN
+   ===================================================== */
+
+.login-page {
+    /*
+     * Ocupa no mínimo toda a altura da tela.
+     * 100vh significa 100% da altura da janela.
+     */
+    min-height: 100vh;
+
+    /* Ativa o Flexbox */
+    display: flex;
+
+    /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+
+    /* Centraliza o conteúdo horizontalmente */
+    justify-content: center;
+
+    /* Cria espaçamento nas laterais em telas pequenas */
+    padding: 20px;
+}
+
+
+/* =====================================================
+   CARTÃO DO LOGIN
+   ===================================================== */
+
+.login-card {
+    /*
+     * Ocupa toda a largura disponível,
+     * respeitando o limite definido abaixo.
+     */
+    width: 100%;
+
+    /* Impede que o cartão fique muito largo */
+    max-width: 400px;
+
+    /* Espaçamento interno do cartão */
+    padding: 30px;
+
+    /* Cor de fundo do cartão */
+    background-color: white;
+
+    /* Arredonda os cantos */
+    border-radius: 12px;
+
+    /*
+     * Cria uma sombra suave ao redor do cartão.
+     *
+     * 0px: deslocamento horizontal
+     * 5px: deslocamento vertical
+     * 20px: desfoque
+     * rgba: cor preta com 10% de transparência
+     */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    /* Garante que o padding não aumente a largura total */
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TÍTULO DO LOGIN
+   ===================================================== */
+
+.login-title {
+    /* Espaçamento abaixo do título */
+    margin-bottom: 25px;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Define a cor do título */
+    color: #172033;
+}
+
+
+/* =====================================================
+   CAMPOS DO FORMULÁRIO
+   ===================================================== */
+
+.form-control {
+    /*
+     * Define uma altura mínima para os campos.
+     * O !important evita que o Bootstrap substitua esse valor.
+     */
+    min-height: 46px !important;
+
+    /* Cria espaço entre os campos */
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   BOTÃO DE LOGIN
+   ===================================================== */
+
+.btn-login {
+    /* Faz o botão ocupar toda a largura do cartão */
+    width: 100%;
+}
+
+
+/* =====================================================
+   MENU PRINCIPAL
+   ===================================================== */
+
+.navbar {
+    /* Define a altura mínima da barra superior */
+    min-height: 70px;
+}
+
+.navbar-brand {
+    /* Define o tamanho do nome do sistema */
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    /* Define a cor dos links do menu */
+    color: #5f6368;
+
+    /* Cria espaço entre os links */
+    margin-right: 12px;
+
+    /* Adiciona uma transição suave na mudança de cor */
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    /* Cor do link quando o mouse passa por cima */
+    color: #0d6efd;
+}
+
+.nav-link i {
+    /* Espaçamento entre o ícone e o texto */
+    margin-right: 5px;
+}
+
+
+/* =====================================================
+   CARTÕES DO MENU PRINCIPAL
+   ===================================================== */
+
+.menu-card {
+    /*
+     * Faz o cartão ocupar toda a altura disponível
+     * dentro da coluna do Bootstrap.
+     */
+    display: block;
+    height: 100%;
+
+    /* Espaçamento interno */
+    padding: 28px;
+
+    /* Cor do texto */
+    color: #212529;
+
+    /* Remove o sublinhado do link */
+    text-decoration: none;
+
+    /* Cor de fundo */
+    background-color: #ffffff;
+
+    /* Borda fina */
+    border: 1px solid #e9ecef;
+
+    /* Arredonda os cantos */
+    border-radius: 14px;
+
+    /* Animação suave */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+    /* Mantém a cor do texto ao passar o mouse */
+    color: #212529;
+
+    /* Move levemente o cartão para cima */
+    transform: translateY(-4px);
+
+    /* Adiciona uma sombra ao cartão */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   ÍCONES DOS CARTÕES
+   ===================================================== */
+
+.menu-icon {
+    /* Usa Flexbox para centralizar o ícone */
+    display: flex;
+
+    /* Centraliza horizontalmente */
+    align-items: center;
+
+    /* Centraliza verticalmente */
+    justify-content: center;
+
+    /* Largura do quadrado do ícone */
+    width: 58px;
+
+    /* Altura do quadrado do ícone */
+    height: 58px;
+
+    /* Espaçamento abaixo do ícone */
+    margin-bottom: 20px;
+
+    /* Arredonda o fundo do ícone */
+    border-radius: 12px;
+
+    /* Tamanho do ícone */
+    font-size: 1.7rem;
+}
+
+
+/* =====================================================
+   TÍTULOS E TEXTOS DOS CARTÕES
+   ===================================================== */
+
+.menu-card h2 {
+    /* Espaçamento abaixo do título */
+    margin-bottom: 8px;
+
+    /* Tamanho do título */
+    font-size: 1.2rem;
+
+    /* Deixa o título mais destacado */
+    font-weight: 600;
+}
+
+.menu-card p {
+    /* Remove a margem padrão do parágrafo */
+    margin-bottom: 0;
+
+    /* Cor do texto secundário */
+    color: #6c757d;
+
+    /* Espaçamento entre as linhas */
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE DO MENU
+   ===================================================== */
+
+@media (max-width: 991px) {
+    /*
+     * Adiciona espaçamento ao menu quando ele
+     * aparece em telas menores.
+     */
+    .navbar-nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Aumenta a área de clique dos links */
+    .nav-link {
+        padding: 10px 0;
+    }
+}

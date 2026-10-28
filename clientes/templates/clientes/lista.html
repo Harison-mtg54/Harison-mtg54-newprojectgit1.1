@@ -1,0 +1,102 @@
+{# Herda a estrutura geral do ERP definida no base.html #}
+{% extends "base.html" %}
+
+{# Altera o título exibido na aba do navegador #}
+{% block title %}Clientes | Meu ERP{% endblock %}
+
+{# Insere o conteúdo da tela no bloco content do base.html #}
+{% block content %}
+<main class="container py-4">
+
+    {# Título da página e botão para iniciar o cadastro de um cliente #}
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+            <h1 class="h3 mb-1">Clientes</h1>
+            <p class="text-muted mb-0">
+                Consulte e gerencie seus clientes.
+            </p>
+        </div>
+
+        {# O href será ligado à URL de cadastro quando ela for criada #}
+        <a href="#" class="btn btn-primary">Novo cliente</a>
+    </div>
+
+    {# Cartão branco que envolve a busca e a tabela #}
+    <section class="card border-0 shadow-sm">
+        <div class="card-body">
+
+            {# Formulário de busca; envia o texto pela URL usando o parâmetro q #}
+            <form method="get" class="row g-2 mb-4">
+                <div class="col-sm-9">
+                    {# Rótulo acessível, oculto visualmente #}
+                    <label for="busca" class="visually-hidden">
+                        Buscar cliente
+                    </label>
+
+                    {# Mantém na caixa o termo buscado após enviar o formulário #}
+                    <input
+                        type="search"
+                        id="busca"
+                        name="q"
+                        class="form-control"
+                        placeholder="Buscar por nome ou documento"
+                        value="{{ request.GET.q }}"
+                    >
+                </div>
+
+                {# Botão que envia a busca #}
+                <div class="col-sm-3 d-grid">
+                    <button type="submit" class="btn btn-outline-primary">
+                        Buscar
+                    </button>
+                </div>
+            </form>
+
+            {# Permite que a tabela role horizontalmente em telas pequenas #}
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+
+                    {# Cabeçalho das colunas da lista #}
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Documento</th>
+                            <th>Telefone</th>
+                            <th class="text-end">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {# Percorre a lista de clientes enviada pela view #}
+                        {% for cliente in clientes %}
+                            <tr>
+                                {# Estes nomes devem corresponder aos campos do seu model #}
+                                <td>{{ cliente.nome }}</td>
+                                <td>{{ cliente.documento|default:"—" }}</td>
+                                <td>{{ cliente.telefone|default:"—" }}</td>
+
+                                {# O link será ligado à URL de edição depois #}
+                                <td class="text-end">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">
+                                        Editar
+                                    </a>
+                                </td>
+                            </tr>
+
+                        {# Exibe esta linha quando não houver clientes na lista #}
+                        {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center text-muted py-4">
+                                    Nenhum cliente cadastrado.
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+</main>
+{% endblock %}
+
